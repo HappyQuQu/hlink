@@ -22,3 +22,18 @@ dist-ssr
 /.vscode
 /packages/app/db.json
 /packages/app/hlink
+
+# Local secrets and machine-specific deployment records
+.env
+.env.*
+!.env.example
+/docs/install/e2big-hotfix.md
+
+# Local deployment artifacts and backups
+/hlink-*.tar.gz
+/build-e2big-*/
+/backups/
+
+# Generated metadata
+*.tsbuildinfo
+._*

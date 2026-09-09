@@ -1,0 +1,8 @@
+# Build context contains compiled patches from the checked-out source tree.
+# Pass a locally retained original image tag; do not pull a moving latest tag.
+ARG BASE_IMAGE=hlink:rollback-20260909
+FROM ${BASE_IMAGE}
+COPY utils-index.js /usr/local/lib/node_modules/hlink/node_modules/@hlink/core/lib/utils/index.js
+COPY deleteEmptyDir.js /usr/local/lib/node_modules/hlink/node_modules/@hlink/core/lib/prune/deleteEmptyDir.js
+COPY schedule.js taskRunner.js /usr/local/lib/node_modules/hlink/node_modules/@hlink/app/dist/kit/
+LABEL org.opencontainers.image.description="hlink 2.0.10: filesystem deletion and scheduled task error isolation"
